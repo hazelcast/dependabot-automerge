@@ -1,4 +1,4 @@
-name: Dependabot auto-merge
+name: Dependabot automerge
 on: pull_request
 
 permissions:
@@ -6,9 +6,9 @@ permissions:
   pull-requests: write
 
 jobs:
-  dependabot-auto-merge:
+  dependabot-automerge:
     runs-on: ubuntu-latest
-    name: Dependabot auto-merge
+    name: Dependabot automerge
     if: github.actor == 'dependabot[bot]'
     steps:
       - uses: actions/checkout@v4
@@ -17,7 +17,7 @@ jobs:
         uses: dependabot/fetch-metadata@v1
         with:
           github-token: "${{ secrets.DEVOPSHAZELCAST_PAT_FOR_MONOREPO }}"
-      - name: Enable auto-merge for dependabot PRs
+      - name: Enable automerge for dependabot PRs
         run: |
           PR_URL="${{ github.event.pull_request.html_url }}"
           DEPENDENCY_NAMES="${{ steps.metadata.outputs.dependency-names }}"

@@ -21,7 +21,7 @@ readarray -t whitelisted_dependencies < "$conf_file_path"
 for dependency in "${whitelisted_dependencies[@]}"; do
   if [[ $DEPENDENCY_NAMES == *"$dependency"* && "$UPDATE_TYPE" == 'version-update:semver-patch' ]]; then
     gh pr merge --auto --squash "$PR_URL"
-    gh pr comment "$PR_URL" -b "Auto-merging a whitelisted patch update."
+    gh pr comment "$PR_URL" -b "Automerging a whitelisted patch update."
     exit 0
   fi
 done
