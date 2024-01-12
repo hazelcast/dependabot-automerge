@@ -9,7 +9,7 @@ UPDATE_TYPE=$3
 
 conf_file="dependabot-automerge-whitelist.conf"
 conf_file_path=".github/workflows/${conf_file}"
-default_conf_file_url="https://raw.githubusercontent.com/hazelcast/dependabot-automerge/master/${conf_file}"  # Replace with the actual URL
+default_conf_file_url="https://raw.githubusercontent.com/hazelcast/dependabot-automerge/master/.github/workflows/${conf_file}"  # Replace with the actual URL
 
 if [ ! -f "$conf_file_path" ]; then
    curl -sSf "$default_conf_file_url" > "$conf_file_path"
