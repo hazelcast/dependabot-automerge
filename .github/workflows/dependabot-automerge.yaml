@@ -12,6 +12,8 @@ jobs:
     if: github.actor == 'dependabot[bot]'
     steps:
       - uses: actions/checkout@v4
+        with:
+          repository: hazelcast/dependabot-automerge
       - name: Fetch dependabot metadata
         id: metadata
         uses: dependabot/fetch-metadata@v1
