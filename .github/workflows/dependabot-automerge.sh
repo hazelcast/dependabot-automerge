@@ -24,7 +24,6 @@ for dependency in "${whitelisted_dependencies[@]}"; do
     gh pr comment "$PR_URL" -b "$MSG"
     echo "$MSG"
     exit 0;
-  else
-    echo "Not a whitelisted patch update of $DEPENDENCY_NAMES. Skipping"
   fi
+  echo "Not a whitelisted patch update of $DEPENDENCY_NAMES. Skipping"
 done
