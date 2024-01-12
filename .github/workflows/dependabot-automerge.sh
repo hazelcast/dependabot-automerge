@@ -25,5 +25,6 @@ for dependency in "${whitelisted_dependencies[@]}"; do
     echo "$MSG"
     exit 0;
   fi
-  echo "Not a whitelisted patch update of $DEPENDENCY_NAMES. Skipping"
 done
+
+echo "Not a whitelisted patch update of $DEPENDENCY_NAMES. Skipping"
