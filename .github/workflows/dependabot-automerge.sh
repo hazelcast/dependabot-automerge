@@ -15,13 +15,15 @@ if [ ! -f "$conf_file_path" ]; then
    curl -sSf "$default_conf_file_url" > "$conf_file_path"
 fi
 
-# Read whitelisted dependencies into an array
 readarray -t whitelisted_dependencies < "$conf_file_path"
 
 for dependency in "${whitelisted_dependencies[@]}"; do
   if [[ $DEPENDENCY_NAMES == *"$dependency"* && "$UPDATE_TYPE" == 'version-update:semver-patch' ]]; then
     gh pr merge --auto --squash "$PR_URL"
-    gh pr comment "$PR_URL" -b "Automerging a whitelisted patch update."
-    exit 0
+    MSG="Automerging a whitelisted patch update of $DEPENDENCY_NAMES"
+    gh pr comment "$PR_URL" -b "$MSG"
+    echo "$MSG"
+  else
+    echo "Not a whitelisted patch update of $DEPENDENCY_NAMES. Skipping"
   fi
 done
