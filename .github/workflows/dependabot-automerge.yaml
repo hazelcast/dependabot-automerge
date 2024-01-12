@@ -15,6 +15,7 @@ jobs:
         name: Checkout ${{ github.repository }} repository
         with:
           sparse-checkout: .github/workflows
+          ref: master
       - uses: actions/checkout@v4
         name: Checkout dependabot-automerge repository
         with:
