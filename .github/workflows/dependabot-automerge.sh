@@ -21,6 +21,7 @@ for dependency in "${whitelisted_dependencies[@]}"; do
   if [[ $DEPENDENCY_NAMES == *"$dependency"* && "$UPDATE_TYPE" == 'version-update:semver-patch' ]]; then
     gh pr merge --auto --squash "$PR_URL"
     gh pr review --approve "$PR_URL"
+    gh pr edit --add-assignee "@me" "$PR_URL"
     MSG="Automerging a whitelisted patch update of $DEPENDENCY_NAMES"
     gh pr comment "$PR_URL" -b "$MSG"
     echo "$MSG"
