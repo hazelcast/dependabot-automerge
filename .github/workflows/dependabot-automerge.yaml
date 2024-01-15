@@ -34,3 +34,11 @@ jobs:
           .github/workflows/dependabot-automerge.sh "$PR_URL" "$DEPENDENCY_NAMES" "$UPDATE_TYPE"
         env:
           GH_TOKEN: ${{ secrets.DEVOPSHAZELCAST_PAT_FOR_MONOREPO }}
+      - uses: 8398a7/action-slack@v3
+        if: failure()
+        with:
+          fields: repo,message,author,action,eventName,workflow,job,pullRequest
+          status: ${{ job.status }}
+          channel: "#dependabot-notifications"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_MONOREPO }}
