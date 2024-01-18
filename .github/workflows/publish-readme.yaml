@@ -1,0 +1,19 @@
+name: Publish README on Confluence
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  publish-readme:
+    name: Publish README on Confluence
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cupcakearmy/confluence-markdown-sync@93af96cd42063c8cf86dbec86a9e70ca0b2a0463
+        with:
+          from: './README.md'
+          to: '4774690840'
+          cloud: hazelcast
+          user: ${{ secrets.CONFLUENCE_USERNAME }}
+          token: ${{ secrets.CONFLUENCE_API_TOKEN }}
