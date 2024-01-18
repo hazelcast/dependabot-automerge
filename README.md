@@ -5,6 +5,7 @@
 - Request for it on `#github-support` Slack channel
 
 ## How to configure automerging in your repository
+
 By default, the workflow will try to automerge PRs updating dependencies configured in [default-dependabot-automerge-whitelist.conf](.github/workflows/default-dependabot-automerge-whitelist.conf)
 Each line describes a dependency. 
 - The first column (mandatory) is a pattern that the dependency name from a PR has to contain. 
