@@ -25,7 +25,7 @@ jobs:
         id: metadata
         uses: dependabot/fetch-metadata@v1
         with:
-          github-token: "${{ secrets.DEVOPSHAZELCAST_PAT_FOR_MONOREPO }}"
+          github-token: "${{ secrets.GH_PAT_FOR_AUTOMERGING }}"
       - name: Enable automerge for dependabot PRs
         run: |
           PR_URL="${{ github.event.pull_request.html_url }}"
@@ -33,7 +33,7 @@ jobs:
           UPDATE_TYPE="${{ steps.metadata.outputs.update-type }}"
           .github/workflows/dependabot-automerge.sh "$PR_URL" "$DEPENDENCY_NAMES" "$UPDATE_TYPE"
         env:
-          GH_TOKEN: ${{ secrets.DEVOPSHAZELCAST_PAT_FOR_MONOREPO }}
+          GH_TOKEN: ${{ secrets.GH_PAT_FOR_AUTOMERGING }}
       - uses: 8398a7/action-slack@v3
         if: failure()
         with:
@@ -41,4 +41,4 @@ jobs:
           status: ${{ job.status }}
           channel: "#dependabot-notifications"
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_MONOREPO }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_FOR_AUTOMERGING }}
