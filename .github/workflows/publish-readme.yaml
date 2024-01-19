@@ -17,3 +17,11 @@ jobs:
           cloud: hazelcast
           user: ${{ secrets.CONFLUENCE_USERNAME }}
           token: ${{ secrets.CONFLUENCE_API_TOKEN }}
+      - uses: 8398a7/action-slack@v3
+        if: failure()
+        with:
+          fields: all
+          status: ${{ job.status }}
+          channel: "#dependabot-notifications"
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_FOR_AUTOMERGING }}
