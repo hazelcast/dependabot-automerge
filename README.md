@@ -6,7 +6,8 @@
 
 ## How to configure automerging in your repository
 
-By default, the workflow will try to automerge PRs updating dependencies configured in [default-dependabot-automerge-whitelist.conf](https://github.com/hazelcast/dependabot-automerge/blob/master/.github/workflows/default-dependabot-automerge-whitelist.conf)
+By default, the workflow will try to automerge PRs updating dependencies configured in [default-dependabot-automerge-whitelist.conf](https://github.com/hazelcast/dependabot-automerge/blob/master/.github/workflows/default-dependabot-automerge-whitelist.conf).
+
 You can override the settings for your repository by creating a `.github/workflows/dependabot-automerge-whitelist.conf` file on `master` branch of your repository. The file will be used instead of the default configuration.
 
 ### Configuration file format
