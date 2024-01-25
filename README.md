@@ -20,6 +20,7 @@ Each line describes a dependency.
 ## How to enable automerging for a requested repository (admins only)
 
 - Make sure the repository has access to the following secrets: `GH_PAT_FOR_AUTOMERGING`, `SLACK_WEBHOOK_FOR_AUTOMERGING`
+- Enable `Allow auto-merge` in the settings of the repository
 - Add the repository to target repositories in the `dependabot-automerge` ruleset (https://github.com/organizations/hazelcast/settings/rules/286995)
 
 ## How to configure global workflow for automerging (admins only)
