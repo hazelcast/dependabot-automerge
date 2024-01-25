@@ -19,7 +19,7 @@ jobs:
         name: Checkout workflows directory from ${{ github.repository }} repository
         with:
           sparse-checkout: .github/workflows
-          ref: master
+          ref: $default-branch
           path: repository
       - name: Fetch dependabot metadata
         id: metadata
