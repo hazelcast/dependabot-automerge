@@ -2,7 +2,7 @@
 
 ## How to enable automerging in your repository
  
-- Request for it on `#github-support` Slack channel
+- Request for it on [`#dev-infra-support` Slack channel](https://hazelcast.slack.com/archives/C07066ELRRD)
 
 ## How to configure automerging in your repository
 
