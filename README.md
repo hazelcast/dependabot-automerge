@@ -21,12 +21,12 @@ Each line describes a dependency.
 
 - Make sure the repository has access to the following secrets: `GH_PAT_FOR_AUTOMERGING`, `SLACK_WEBHOOK_FOR_AUTOMERGING`
 - Enable `Allow auto-merge` in the settings of the repository
-- Add the repository to target repositories in the `dependabot-automerge` ruleset (https://github.com/organizations/hazelcast/settings/rules/286995)
-- (Optional) Add `devOpsHazelcast` user to the `.github/CODEOWNERS` file on the default branch (`master`/`main`). Otherwise, automerging will wait for approval from a code owner).
+- Add the repository to target repositories in the [`dependabot-automerge` ruleset](https://github.com/organizations/hazelcast/settings/rules/286995)
+- (Optional) Add `devOpsHazelcast` user to the `.github/CODEOWNERS` file on the default branch (`master`/`main`). Otherwise, automerging will wait for approval from a code owner.
 
 ## How to configure global workflow for automerging (admins only)
 
-- Add the new branch ruleset in https://github.com/organizations/hazelcast/settings/rules
+- [Add the new branch ruleset](https://github.com/organizations/hazelcast/settings/rules)
 - Enforcement status to `Evaluate` to make the workflow non-required for the PRs
 - Select target repositories you want to have dependabot automerging functionality
 - Select default branch (`Include default branch`) as a target branch
