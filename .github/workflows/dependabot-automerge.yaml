@@ -23,7 +23,7 @@ jobs:
           path: repository
       - name: Fetch dependabot metadata
         id: metadata
-        uses: dependabot/fetch-metadata@v1
+        uses: dependabot/fetch-metadata@v2
         with:
           github-token: "${{ secrets.GH_PAT_FOR_AUTOMERGING }}"
       - name: Enable automerge for dependabot PRs
