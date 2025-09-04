@@ -11,11 +11,11 @@ jobs:
     name: Dependabot automerge
     if: github.actor == 'dependabot[bot]'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         name: Checkout dependabot-automerge repository
         with:
           repository: hazelcast/dependabot-automerge
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         name: Checkout workflows directory from ${{ github.repository }} repository
         with:
           sparse-checkout: .github/workflows

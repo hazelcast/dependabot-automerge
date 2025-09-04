@@ -9,7 +9,7 @@ jobs:
     name: Publish README on Confluence
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - uses: hazelcast/confluence-markdown-sync@master
         with:
           from: './README.md'
