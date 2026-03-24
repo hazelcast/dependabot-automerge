@@ -9,7 +9,7 @@ jobs:
   dependabot-automerge:
     runs-on: ubicloud-standard-2
     name: Dependabot automerge
-    if: github.actor == 'dependabot[bot]'
+    if: github.event.pull_request.user.login == 'dependabot[bot]'
     steps:
       - uses: actions/checkout@v6
         name: Checkout dependabot-automerge repository
