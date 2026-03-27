@@ -1,5 +1,6 @@
 name: Publish README on Confluence
 on:
+  pull_request: 
   push:
     branches:
       - "master"
