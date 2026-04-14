@@ -34,11 +34,8 @@ jobs:
           .github/workflows/dependabot-automerge.sh "$PR_URL" "$DEPENDENCY_NAMES" "$UPDATE_TYPE"
         env:
           GH_TOKEN: ${{ secrets.GH_PAT_FOR_AUTOMERGING }}
-      - uses: 8398a7/action-slack@v3
+      - uses: hazelcast/docker-actions/slack-notification@master
         if: failure()
         with:
-          fields: repo,message,author,action,eventName,workflow,job,pullRequest
-          status: ${{ job.status }}
-          channel: "#dependabot-notifications"
-        env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_FOR_AUTOMERGING }}
+          slack-webhook-url: ${{ secrets.SLACK_WEBHOOK_FOR_AUTOMERGING }}
+          slack-channel: "#dependabot-notifications"
