@@ -35,6 +35,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_PAT_FOR_AUTOMERGING }}
       - uses: hazelcast/docker-actions/slack-notification@master
+        if: failure()
         with:
           slack-webhook-url: ${{ secrets.SLACK_WEBHOOK_FOR_AUTOMERGING }}
           slack-channel: "#dependabot-notifications"

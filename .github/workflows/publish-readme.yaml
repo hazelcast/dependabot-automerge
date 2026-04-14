@@ -31,6 +31,7 @@ jobs:
           user: ${{ env.GOOGLE_DEVOPSHAZELCAST_EMAIL }}
           token: ${{ env.CONFLUENCE_DEVOPSHAZELCAST_API_TOKEN }}
       - uses: hazelcast/docker-actions/slack-notification@master
+        if: failure()
         with:
           slack-webhook-url: ${{ secrets.SLACK_WEBHOOK_FOR_AUTOMERGING }}
           slack-channel: "#dependabot-notifications"
