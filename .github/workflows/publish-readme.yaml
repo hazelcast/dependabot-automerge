@@ -35,3 +35,4 @@ jobs:
         with:
           slack-webhook-url: ${{ secrets.SLACK_WEBHOOK_FOR_AUTOMERGING }}
           slack-channel: "#dependabot-notifications"
+          status: failure
